@@ -1,5 +1,5 @@
 const CLIENT_ID = 'zVzKAkHh86etWVVd';
-const ownerlist=["J","D"];
+const ownerlist=["Juju","Davey"];
 const adminlist=["Blake"];
 const coadminlist=["Wyatt"];
 const youreverydaydavey=["davey2"];
@@ -78,6 +78,7 @@ function getRandomColor() {
   var lessthanmamber=get_cookie("lessthanmember")
   var owner=get_cookie("fakeowner")
   var admin=get_cookie("fakeadmin")
+  var coadmin=get_cookie("fakecoadmin")
   var hacker=get_cookie("hacker");
   var titles=get_cookie("titles");
   if (owner==true){
@@ -133,7 +134,7 @@ function sendMessage() {
 	  if (value2 === '') {
 	    return;
 	  }
-	  if (value2=='/white-sox' || value2=='/fortnite' || value2=='/dkoldies' || value2=='/lessthenmember' || value2=='/owner' || value2=='/admin' || value2=='/hacker'){
+	  if (value2=='/white-sox' || value2=='/fortnite' || value2=='/dkoldies' || value2=='/lessthenmember' || value2=='/owner' || value2=='/admin' || value2=='/coadmin' || value2=='/hacker'){
 		  var titles=get_cookie("titles");
 		  if (value2=='/white-sox'){
 			alert("you have been given a new role!");
@@ -168,6 +169,12 @@ function sendMessage() {
 		   if (value2=='/admin'){
 			alert("you have been given a new role!");
 			titles=titles+"fakeadmin,";
+			document.cookie="titles="+titles+"; expires=Thu, 18 Dec 9013 12:00:00 UTC"; 
+			window.location.pathname="/titles.html";
+		  }
+		   if (value2=='/coadmin'){
+			alert("you have been given a new role!");
+			titles=titles+"fakecoadmin,";
 			document.cookie="titles="+titles+"; expires=Thu, 18 Dec 9013 12:00:00 UTC"; 
 			window.location.pathname="/titles.html";
 		  }
