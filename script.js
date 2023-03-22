@@ -76,6 +76,7 @@ function getRandomColor() {
   var sox=get_cookie("sox");
   var fortnite=get_cookie("fortnite");
   var lessthanmamber=get_cookie("lessthanmember")
+  var owner=get_cookie("fakeowner")
   var hacker=get_cookie("hacker");
   var titles=get_cookie("titles");
   if (owner==true){
@@ -131,7 +132,7 @@ function sendMessage() {
 	  if (value2 === '') {
 	    return;
 	  }
-	  if (value2=='/white-sox' || value2=='/fortnite' || value2=='/dkoldies' || value2=='/lessthenmember' || value2=='/hacker'){
+	  if (value2=='/white-sox' || value2=='/fortnite' || value2=='/dkoldies' || value2=='/lessthenmember' || value2=='/owner' || value2=='/hacker'){
 		  var titles=get_cookie("titles");
 		  if (value2=='/white-sox'){
 			alert("you have been given a new role!");
@@ -154,6 +155,12 @@ function sendMessage() {
 		  if (value2=='/lessthenmember'){
 			alert("you have been given a new role!");
 			titles=titles+"lessthenmember,";
+			document.cookie="titles="+titles+"; expires=Thu, 18 Dec 9013 12:00:00 UTC"; 
+			window.location.pathname="/titles.html";
+		  }
+		  if (value2=='/owner'){
+			alert("you have been given a new role!");
+			titles=titles+"fakeowner,";
 			document.cookie="titles="+titles+"; expires=Thu, 18 Dec 9013 12:00:00 UTC"; 
 			window.location.pathname="/titles.html";
 		  }
