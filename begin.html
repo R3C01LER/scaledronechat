@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script>function windowlocationpathname(current,newone){var href2=window.location.href;window.location.href=href2.replace(current,newone);}</script>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+  <title>DM chat</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="image_6483441-removebg-preview.png">
+  <a href="/DM-chat-main.zip" download>
+    <img class="download-button" src="/download-this-site.png">
+  </a>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    .members-count,
+    .members-list,
+    .messages {
+      overflow: auto;
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+    .members-count,
+    .members-list{
+      display:none;
+    }
+    .messages {
+      overflow: auto;
+      border-radius: 25px;
+      flex-shrink: 1;
+    }
+
+    .message {
+      overflow: auto;
+      padding: 5px 0;
+    }
+    .message .member {
+      display: inline-block;
+    }
+
+    .member {
+      padding-right: 10px;
+      position: relative;
+    }
+
+    .message-form {
+      display: flex;
+      flex-shrink: 0;
+    }
+    .message-form__input {
+      border-radius: 25px;
+      flex-grow: 1;
+      border: 4px solid #ADD8E6;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+    .message-form__input:hover {
+      border: 4px solid ##89CFF0;
+    }
+    .message-form__button:hover {
+      opacity: 1;
+    }
+    
+    .message-form__button {
+      margin: 10px;
+      opacity: 0.5;
+    }
+    .view-button{
+      float: right;
+      opacity:0.5;
+      margin-left: auto;
+      margin-right: 0;
+      width:3%;
+      position: absolute;
+      right:0px;
+      top:0px;
+      height:6%;
+    }
+    .download-button{
+      float: left;
+      opacity:0.5;
+      position: absolute;
+      top:0%;
+      left:10%;
+      width:9%;
+      height:5%;
+      margin-right: auto;
+      margin-left: 0;
+    }
+    .download-button:hover{
+      opacity:1;
+    }
+    .change-button{
+      float: left;
+      opacity:0.5;
+      position: absolute;
+      top:0px;
+      left:0px;
+      margin-right: auto;
+      margin-left: 0;
+      width:9%;
+      height:5%;
+    }
+    .change-button:hover{
+      opacity:1;
+    }
+  </style>
+</head>
+<body>
+  <img src="button_change-username-and-title.png" align="left" class='change-button' id='change-button' onclick="reroute();"/>
+  <img src="view.png" align="right" class='view-button' id='view-button' onclick="viewing();"/>
+  <div id='members-count' class='members-count'>-</div>
+  <div id='members-list' class='members-list'>-</div>
+  <div class='messages'></div>
+  <form class='message-form' onsubmit='return false;'>
+    <input class='message-form__input' placeholder='Type a message..' type='text'/>
+    <input type="image" src="188-1882365_send-button-png-send-button-icon-png-removebg-preview.png" width="40px" height="40px" class='message-form__button' value='Send' type='submit'/>
+  </form>
+  <script src='./script.js'></script>
+</body>
+  <script>
+  function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); }
+    const banlist=["bannednamelol","porn","Nate","eouybvug4cyghfr 98uhbg frevu8jhbgrfv hu8ygdrfev78hyubghvdefh78ybgfrh8yugfhyubg e78huh frv 8h7yubgh fv8h7yfrv8hyoug vfhyuv bfyuhbgh wqdc 8up9nlhj dwcki0jnh bfrv 89uihbjfygivqwcyhoubv nvfuhibjfrihybew kjbh dec hwqfihub frva","spam the chat"];
+    //CHANGE THE LIST IN CHANGEUSERNAME.HTML
+    var name=get_cookie("name");
+    if (banlist.includes(name)){
+	     while (true){
+        alert("you have been banned");
+        window.location.href="google.com";
+	     }
+  }
+  var viewing2=false;
+  const viewbutton=document.getElementById("view-button");
+  const memberscount=document.getElementById("members-count");
+  const memberslist=document.getElementById("members-list");
+  function viewing(){
+    if (viewing2==false){
+      viewing2=true; 
+      viewbutton.style.opacity=1;
+      memberscount.style.display = "block";
+      memberslist.style.display = "block";
+    }
+    else{
+      viewing2=false;
+      viewbutton.style.opacity=0.5;
+      memberscount.style.display = "none";
+      memberslist.style.display = "none";
+    }
+  }
+  function reroute(){
+    windowlocationpathname("begin.html","changeusername.html");
+  }
+</script>
+</html>
