@@ -1,8 +1,7 @@
 const CLIENT_ID = 'zVzKAkHh86etWVVd';
-const ownerlist=["Juju","Davey"];
+const ownerlist=["Bothacker1115","D"];
 const adminlist=["Blake"];
 const coadminlist=["Wyatt"];
-const youreverydaydavey=["davey2"];
 //PUT BANNED NAMES IN BEGIN.HTML AND ADMIN NAMES IN CHANGEUSERNAME.HTML TOO
 function get_cookie(cookie_name) { const value = "; " + document.cookie; const parts = value.split("; " + cookie_name + "="); if (parts.length === 2) return parts.pop().split(";").shift(); }
 const drone = new ScaleDrone(CLIENT_ID, {
