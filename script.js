@@ -79,7 +79,7 @@ function getRandomColor() {
   var admin=get_cookie("fake admin")
   var coadmin=get_cookie("fake coadmin")
   var fan=get_cookie("fan")
-  var davey=get_cookie("official davey
+  var davey=get_cookie("official davey)
   var hacker=get_cookie("hacker");
   var titles=get_cookie("titles");
   if (owner==true){
